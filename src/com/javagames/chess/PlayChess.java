@@ -24,8 +24,6 @@ public class PlayChess {
                 from = in.nextLine();
                 System.out.println("Now select where you want to move that piece. (e.g. 'c7')");
                 to = in.nextLine();
-                System.out.println(from);
-                System.out.println(to);
                 ChessBoard.updateBoard(from, to);
 
 
