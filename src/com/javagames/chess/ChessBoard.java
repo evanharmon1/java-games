@@ -87,10 +87,12 @@ public class ChessBoard {
         int i = parsedFrom[0];
         int j = parsedFrom[1];
         String piece = board[i][j];
+        board[i][j] = "E";
 
         int[] parsedTo = parseInput(to);
-
-
+        i = parsedTo[0];
+        j = parsedTo[1];
+        board[i][j] = piece;
 
     }
 
