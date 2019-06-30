@@ -2,4 +2,4 @@
 
 
 ## Chess
-<img src="chess.png" width="300" align="center">
+<img src="chess.png" width="500" align="center">
