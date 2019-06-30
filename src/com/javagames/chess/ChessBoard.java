@@ -6,14 +6,14 @@ import java.util.HashMap;
 
 public class ChessBoard {
 
-    private static String[][] board = {{ "R", "N", "B", "Q", "K", "B", "N", "R", },
-                                       { "P", "P", "P", "P", "P", "P", "P", "P", },
+    private static String[][] board = {{ "BR", "BN", "BB", "BQ", "BK", "BB", "BN", "BR", },
+                                       { "BP", "BP", "BP", "BP", "BP", "BP", "BP", "BP", },
                                        { "E", "E", "E", "E", "E", "E", "E", "E", },
                                        { "E", "E", "E", "E", "E", "E", "E", "E", },
                                        { "E", "E", "E", "E", "E", "E", "E", "E", },
                                        { "E", "E", "E", "E", "E", "E", "E", "E", },
-                                       { "P", "P", "P", "P", "P", "P", "P", "P", },
-                                       { "R", "N", "B", "Q", "K", "B", "N", "R", }
+                                       { "WP", "WP", "WP", "WP", "WP", "WP", "WP", "WP", },
+                                       { "WR", "WN", "WB", "WQ", "WK", "WB", "WN", "WR", }
     };
 
     public static void displayBoard(){
@@ -22,11 +22,34 @@ public class ChessBoard {
                 if(j == 0) {
                     System.out.print(Math.abs(i - 8));
                 }
-                System.out.print(symbols.get(board[i][j]));
+                if(i % 2 == 0) {
+                    if (j % 2 == 0) {
+                        if (board[i][j].equals("E")) {
+                            System.out.print("\u25a1");
+                        } else {
+                            System.out.print(symbols.get(board[i][j]));
+                        }
+                    }
+                    else {
+                        System.out.print(symbols.get(board[i][j]));
+                    }
+                }
+                if(i % 2 == 1) {
+                    if (j % 2 == 1) {
+                        if (board[i][j].equals("E")) {
+                            System.out.print("\u25a1");
+                        }
+                        else {
+                            System.out.print(symbols.get(board[i][j]));
+                        }
+                    }
+                else {
+                    System.out.print(symbols.get(board[i][j]));
+                }
+                }
             }
             System.out.println("");
         }
-//        for(String pos : board)
         System.out.println(" abcdefgh");
     }
 
@@ -35,12 +58,18 @@ public class ChessBoard {
     private static HashMap<String, String> createSymbols(){
         HashMap<String, String> symbols = new HashMap<>();
 
-        symbols.put("P", "\u265f");
-        symbols.put("N", "\u265e");
-        symbols.put("B", "\u265d");
-        symbols.put("R", "\u265c");
-        symbols.put("Q", "\u265b");
-        symbols.put("K", "\u265a");
+        symbols.put("WP", "\u2659");
+        symbols.put("WN", "\u2658");
+        symbols.put("WB", "\u2657");
+        symbols.put("WR", "\u2656");
+        symbols.put("WQ", "\u2655");
+        symbols.put("WK", "\u2654");
+        symbols.put("BP", "\u265f");
+        symbols.put("BN", "\u265e");
+        symbols.put("BB", "\u265d");
+        symbols.put("BR", "\u265c");
+        symbols.put("BQ", "\u265b");
+        symbols.put("BK", "\u265a");
         symbols.put("E", "\u25a0");
 
         return symbols;
